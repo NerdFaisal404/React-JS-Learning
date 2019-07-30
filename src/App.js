@@ -52,7 +52,7 @@ class App extends Component {
           <First name={item.name} email={item.email}
             address={item.address} />
         )} */}
-        <div className="container my-3">
+        {/* <div className="container my-3">
 
           <input onChange={this.inputHandler} type="text" placeholder="Enter Your Name" />
 
@@ -60,7 +60,9 @@ class App extends Component {
             Click Me
         </button>
           {this.state.name ? <p>Hello .. {this.state.name}</p> : ''}
-        </div >
+        </div > */}
+        <h1>Hello React JS</h1>
+
       </div >
     );
   }
