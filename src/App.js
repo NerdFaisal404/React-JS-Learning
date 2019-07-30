@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import First from './components/First'
 import Counter from './components/counter/Counter'
+import Books from './components/books/Books'
 
 class App extends Component {
 
@@ -27,6 +28,32 @@ class App extends Component {
       { name: 'Faisal Ahmed2', email: 'faisal.ahmedbcse2@gmail.com', address: 'Dhanmondi 2' },
       { name: 'Faisal Ahmed3', email: 'faisal.ahmedbcse3@gmail.com', address: 'Dhanmondi 3' }
 
+    ],
+    books: [
+      {
+        id: 1,
+        name: 'JavaScript',
+        price: 20,
+
+      },
+      {
+        id: 2,
+        name: 'React JS',
+        price: 30,
+
+      },
+      {
+        id: 3,
+        name: 'Node JS',
+        price: 35,
+
+      },
+      {
+        id: 4,
+        name: 'React Native',
+        price: 40,
+
+      },
     ]
   }
 
@@ -41,6 +68,13 @@ class App extends Component {
     this.setState({
       name: event.target.value
     });
+  }
+
+  deleteHandler = (id) => {
+    let newBooks = this.state.books.filter(book => book.id != id)
+    this.setState({
+      books: newBooks
+    })
   }
 
   render() {
@@ -61,7 +95,9 @@ class App extends Component {
         </button>
           {this.state.name ? <p>Hello .. {this.state.name}</p> : ''}
         </div > */}
-        <h1>Hello React JS</h1>
+
+        <Books deleteHandler={this.deleteHandler.bind(this)} books={this.state.books} />
+
 
       </div >
     );
